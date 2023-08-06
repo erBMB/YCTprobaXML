@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -73,9 +74,13 @@ namespace probaXML
 
         public void CreezFisier()
         {
+            if (!Directory.Exists(CautFisier() +"Produse"))
+            {
+                Directory.CreateDirectory(CautFisier() + "Produse");
+            }
             XmlWriterSettings settings = new XmlWriterSettings();
             settings.Indent = true;
-            settings.IndentChars = ("        ");
+            settings.IndentChars = ("    ");
             settings.CloseOutput=true;
             settings.OmitXmlDeclaration=true;
             XmlWriter writer = XmlWriter.Create(CautFisier() + "Produse\\" + NrProdus + "_OBC.xml", settings);
