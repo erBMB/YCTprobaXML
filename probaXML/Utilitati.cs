@@ -75,7 +75,7 @@ namespace probaXML
         {
             XmlWriterSettings settings = new XmlWriterSettings();
             settings.Indent = true;
-            settings.IndentChars = ("    ");
+            settings.IndentChars = ("        ");
             settings.CloseOutput=true;
             settings.OmitXmlDeclaration=true;
             XmlWriter writer = XmlWriter.Create(CautFisier() + "Produse\\" + NrProdus + "_OBC.xml", settings);
